@@ -1,0 +1,19 @@
+<h1> Issue Tracker </h1>
+<ul>
+  <li *ngFor="let issue of issueList">
+    <p>
+      {{ issue.title }} 
+      <br>
+      {{ issue.number }} 
+      <br>
+      {{ issue.state }}
+      <br>
+      {{ issue.created_at }}
+      <br>
+      {{ issue.updated_at }}
+      <br>
+      {{ issue.user.login }}
+    </p>
+  </li>  
+</ul>
+<router-outlet></router-outlet>
