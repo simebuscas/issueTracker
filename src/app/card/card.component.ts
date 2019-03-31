@@ -9,9 +9,10 @@ import { IssuesService } from '../issues.service';
 export class CardComponent implements OnInit {
 
   issueList: Object;
-  currentPage : number = this.issues.page;
-  pageSize : number=this.issues.pageSize;
-  collectionSize : number = this.issues.collectionSize
+  link:any;
+  currentPage = 1;
+  pageSize : number= 30;
+  collectionSize : number;
   constructor(private issues: IssuesService)
   {}
 
@@ -22,9 +23,14 @@ export class CardComponent implements OnInit {
 
   loadData(event:any)
   {
-    this.issues.getPage(event).subscribe(issues => 
+    this.currentPage = event;
+    this.issues.getIssues(event).subscribe(issues => 
     {
-      this.issueList = issues;
+      this.issueList = issues.body;
+      this.link = issues.headers.get('Link');
+      //extracts the last page value from the header link string
+      this.collectionSize = this.pageSize * ((this.link.substring(this.link.split('rel="last"')[0].lastIndexOf('page=')).split('page=')[1].split('>')[0])-1);
     });
   }
+  
 }

@@ -1,3 +1,26 @@
+<div class="card-app-header container-fluid table fixed-top bg-info text-light">
+    <div class="row ">
+        <div class="col-1 text-center ">
+            # 
+        </div>
+        <div class="col-4 text-center">
+            Title
+        </div>
+        <div class="col-1">
+            State
+        </div>
+        <div class="col-2">
+            Created
+        </div>
+        <div class="col-2">
+            Updated
+        </div>
+        <div class="col-2">
+            User 
+        </div>
+    </div>
+</div>
+
 <ngb-accordion #acc="ngbAccordion" [closeOthers]="true">
   <ngb-panel  *ngFor="let issue of issueList ; let i = index" id="ngb-panel-{{i}}">
     <ng-template ngbPanelHeader >
@@ -16,10 +39,10 @@
               </span> 
             </div>
             <div class="col-2">
-                {{ issue.created_at }} 
+                {{ issue.created_at | date:"dd/MM/yyyy"}} 
             </div>
             <div class="col-2">
-                {{ issue.updated_at }} 
+                {{ issue.updated_at | date:"dd/MM/yyyy"}} 
             </div>
             <div class="col-2">
                 {{ issue.user.login }}
@@ -35,8 +58,9 @@
     </ng-template>
   </ngb-panel>
 </ngb-accordion>
+
 <ngb-pagination class="d-flex justify-content-center fixed-bottom bg-info pt-2"  [collectionSize]="collectionSize" [(page)]="currentPage" 
-[pageSize]="pageSize" (pageChange)="loadData($event)">
+[pageSize]="pageSize" [maxSize]="5" (pageChange)="loadData($event)">
 
 </ngb-pagination>
 

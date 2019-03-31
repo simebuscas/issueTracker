@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -7,30 +7,13 @@ import { HttpClient } from '@angular/common/http';
 
 export class IssuesService {
 
+  readonly angularURL : string = 'https://api.github.com/repos/angular/angular/issues';
+
   constructor(private http: HttpClient) { }
-  gitURL : string = 'https://api.github.com/repos/angular/angular/issues';
-  page : number = 1;
-  maxPage: number = 91;
-  pageSize : number=30;
-  collectionSize : number=90;
-  requestURL : string = this.gitURL + '?page=' + this.page;
 
-  getIssues()
+  getIssues(page:number)
   {
-    return this.http.get(this.requestURL);
-  }
-
-  getPage(page:number)
-  {
-    if(page<=this.maxPage && page>0)
-    {
-      this.page=page;
-    }
-    else
-    {
-      this.page=1;
-    }
-    this.requestURL = this.gitURL + '?page=' + this.page;
-    return this.getIssues();
+    let params= new HttpParams().set('page',page);
+    return this.http.get(this.angularURL,{params,observe:'response'});
   }
 }
