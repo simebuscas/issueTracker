@@ -3,7 +3,7 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.6.
 The [Issue Service] *issues.service.ts* will connect to [Angular Issues](https://api.github.com/repos/angular/angular/issues) and collect the first 30 issues into the [Card Component] *card.component.ts*.
 The [Card Component] *card.component.html* is build out of three parts.
-Markup :  1. A *fake* table header made out of divs and bootstrap cols
+ Markup :  1. A *fake* table header made out of divs and bootstrap cols
           2. The ng-accordion component
           3. The ng-bootstrap pagination component
 Pages may be traversed using the pagination component.
