@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('~bootstrap/dist/css/bootstrap.min.css');
+body 
+{ 
+    /*
+    *   corrects fixed top and bot nav bar
+    */
+    padding-top: 100px; 
+    padding-bottom: 80px; 
+}
+.state-badge
+{
+    position: absolute;
+    top:2px;
+    left:0px;
+}
+.card-app-header
+{
+    z-index: 1000;
+    padding-top: 60px; 
+    padding-bottom: 5px;
+}

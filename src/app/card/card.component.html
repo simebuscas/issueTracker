@@ -1,0 +1,42 @@
+<ngb-accordion #acc="ngbAccordion" [closeOthers]="true">
+  <ngb-panel  *ngFor="let issue of issueList ; let i = index" id="ngb-panel-{{i}}">
+    <ng-template ngbPanelHeader >
+      <a (click)="acc.toggle('ngb-panel-'+[i])">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-1">
+                {{ issue.number }} 
+            </div>
+            <div class="col-4">
+                {{ issue.title }}  
+            </div>
+            <div class="col-1">
+              <span class="badge-{{issue.state}} badge state-badge ">
+                  {{ issue.state }}
+              </span> 
+            </div>
+            <div class="col-2">
+                {{ issue.created_at }} 
+            </div>
+            <div class="col-2">
+                {{ issue.updated_at }} 
+            </div>
+            <div class="col-2">
+                {{ issue.user.login }}
+            </div>
+          </div>
+        </div>
+      </a>
+    </ng-template>
+    <ng-template ngbPanelContent>
+      <div class="panel-content container-fluid">
+        {{ issue.body }}
+      </div>
+    </ng-template>
+  </ngb-panel>
+</ngb-accordion>
+<ngb-pagination class="d-flex justify-content-center fixed-bottom bg-info pt-2"  [collectionSize]="collectionSize" [(page)]="currentPage" 
+[pageSize]="pageSize" (pageChange)="loadData($event)">
+
+</ngb-pagination>
+

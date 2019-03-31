@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { IssuesService } from './issues.service';
 
 @Component({
   selector: 'app-root',
@@ -9,20 +8,12 @@ import { IssuesService } from './issues.service';
 export class AppComponent  implements OnInit{
   
   title = 'issueTracker';
-  issueList: Object;
 
-  constructor(private issues: IssuesService)
-  {
-
-  }
+  constructor()
+  {}
 
   ngOnInit() 
   {
-    this.issues.getIssues().subscribe(issues => 
-    {
-      this.issueList = issues;
-      console.log(this.issueList);
-    });
   }
 
 }

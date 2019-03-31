@@ -1,19 +1,27 @@
-<h1> Issue Tracker </h1>
-<ul>
-  <li *ngFor="let issue of issueList">
-    <p>
-      {{ issue.title }} 
-      <br>
-      {{ issue.number }} 
-      <br>
-      {{ issue.state }}
-      <br>
-      {{ issue.created_at }}
-      <br>
-      {{ issue.updated_at }}
-      <br>
-      {{ issue.user.login }}
-    </p>
-  </li>  
-</ul>
+
+<app-nav></app-nav>
+<div class="card-app-header container-fluid table fixed-top bg-info text-light">
+    <div class="row ">
+        <div class="col-1 text-center ">
+            # 
+        </div>
+        <div class="col-4 text-center">
+            Title
+        </div>
+        <div class="col-1">
+            State
+        </div>
+        <div class="col-2">
+            Created
+        </div>
+        <div class="col-2">
+            Updated
+        </div>
+        <div class="col-2">
+            User 
+        </div>
+    </div>
+</div>
+<app-card></app-card>
+
 <router-outlet></router-outlet>
