@@ -1,6 +1,8 @@
 # IssueViwer
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.6.
+The [Issue Service] (issues.service.ts) will connect to [Angular](https://api.github.com/repos/angular/angular/issues) and collect the first 30 issues into the [Card Component] (card.component.ts).
+Pages may be traversed using the pagination options.
 
 ## Development server
 
@@ -8,7 +10,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 ## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+
 
 ## Build
 
