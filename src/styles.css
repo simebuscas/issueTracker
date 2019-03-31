@@ -20,3 +20,37 @@ body
     padding-top: 60px; 
     padding-bottom: 5px;
 }
+.badge-open
+{
+    color:white;
+    background-color:#28a745;
+}
+
+.badge-closed 
+{
+    color:white;
+    background-color:red;
+}
+
+.panel-content {
+    white-space: pre-wrap;
+}
+
+.card-header
+{
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+}
+
+a{
+    
+    display: table;
+    cursor: pointer;
+    display:block; 
+    padding-top: 0.75rem;
+    padding-right: 1.25rem;
+    padding-bottom: 0.75rem;
+    padding-left: 1.25rem;
+}

@@ -1,3 +1,6 @@
+<!-- Fake table header mad out of divs and bootstrap row + col classes
+     fixed top to follow when scrolling
+-->
 <div class="card-app-header container-fluid table fixed-top bg-info text-light">
     <div class="row ">
         <div class="col-1 text-center ">
@@ -21,13 +24,16 @@
     </div>
 </div>
 
-<ngb-accordion #acc="ngbAccordion" [closeOthers]="true">
+<!-- ng-boostrap accordion
+     loops over all issues and creates an acordion of each
+-->
+<ngb-accordion #acc="ngbAccordion" [closeOthers]="true" activeIds="ngb-panel-0">
   <ngb-panel  *ngFor="let issue of issueList ; let i = index" id="ngb-panel-{{i}}">
     <ng-template ngbPanelHeader >
       <a (click)="acc.toggle('ngb-panel-'+[i])">
         <div class="container-fluid">
           <div class="row">
-            <div class="col-1">
+            <div class="col-1 btn-link">
                 {{ issue.number }} 
             </div>
             <div class="col-4">
@@ -59,8 +65,10 @@
   </ngb-panel>
 </ngb-accordion>
 
+<!-- nb-bootstrap pagination
+     fixed bottom to be avilable when scrolling
+-->
 <ngb-pagination class="d-flex justify-content-center fixed-bottom bg-info pt-2"  [collectionSize]="collectionSize" [(page)]="currentPage" 
 [pageSize]="pageSize" [maxSize]="5" (pageChange)="loadData($event)">
-
 </ngb-pagination>
 
