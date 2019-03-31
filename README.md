@@ -8,25 +8,20 @@ The [Card Component] *card.component.html* is build out of three parts.
 3. The ng-bootstrap pagination component
 Pages may be traversed using the pagination component.
 
+## Requirements
+
+`node.js`
+`angular7`
+Follow the steps in [Angular](https://angular.io/guide/quickstarti) to install both requierements.
+
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
+From the root directory *issueTracker* run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
 ## Further help
 
