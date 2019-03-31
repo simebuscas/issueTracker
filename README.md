@@ -6,6 +6,7 @@ The [Card Component] *card.component.html* is build out of three parts.
 1. A *fake* table header made out of divs and bootstrap cols
 2. The ng-accordion component
 3. The ng-bootstrap pagination component
+ 
 Pages may be traversed using the pagination component.
 
 ## Requirements
