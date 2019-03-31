@@ -13,7 +13,7 @@ export class IssuesService {
 
   getIssues(page:number)
   {
-    let params= new HttpParams().set('page',page);
+    let params= new HttpParams().set('page',page.toString());
     return this.http.get(this.angularURL,{params,observe:'response'});
   }
 }
